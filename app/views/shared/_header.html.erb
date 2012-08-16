@@ -1,0 +1,17 @@
+<div id="header">
+  <h2 class="title"> The JobApp</h2>
+
+  <div id="nav">
+      <p><%= link_to 'Home', root_path %></p>
+      <div>Signed in: <%= user_signed_in? %></div>
+      <% if user_signed_in? %>
+        Signed in as <%= current_user.email%>. Not You?
+        <%= link_to "Sign Out", destroy_user_session_path,:method => :delete%>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
+      
+  </div>
+</div>
+
+
